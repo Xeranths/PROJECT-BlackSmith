@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="MeleeWeaponUltratech">
+    <defName>MeleeWeapon_DrakeTongue</defName>
+    <label>drake tongue</label>
+    <description>The blade of this weapon is made of "solid" flames, making the weapon unable to do physical damage others than burns.However, it's destroy armors easily by melting them.</description>
+    <soundInteract>Interact_PlasmaSword</soundInteract>
+    <meleeHitSound>MeleeHit_PlasmaSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/PlasmaSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>1.8</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Flame</def>
+            <amount>25</amount>
+            <chance>1</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.8</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Flame</def>
+            <amount>36</amount>
+            <chance>1</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+ <ThingDef ParentName="MeleeWeaponUltratech">
+    <defName>MeleeWeapon_ImmortalGrasp</defName>
+    <label>immortal grasp</label>
+    <description>A warhammer with an embedded EMP capacitor. Upon impact, it blasts the target with an EMP burst in addition to the physical damage.</description>
+    <soundInteract>Interact_ZeusHammer</soundInteract>
+    <meleeHitSound>MeleeHit_ZeusHammer</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/ZeusHammer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>head</label>
+        <labelUsedInLogging>false</labelUsedInLogging>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>55</power>
+        <cooldownTime>4.5</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>EMP</def>
+            <amount>9</amount>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+    <verbs>
+      <li>
+        <verbClass>Verb_Jump</verbClass>
+        <label>jump</label>
+        <commandIcon>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</commandIcon>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.2</warmupTime>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+	<!-- Mortal Reminder -->
+
+<ThingDef ParentName="MeleeWeaponUltratech">
+    <defName>MeleeWeapon_MortalReminder</defName>
+    <label>mortal reminder</label>
+    <description>A spear with a wide blade, both made for poking and slicing. It's sharpness is one of the better of the known universe, inspired by Monosword designs. Used by the guards of a mythical SynthWorld created to worship a Machine-God.</description>
+    <soundInteract>Interact_MonoSword</soundInteract>
+    <meleeHitSound>MeleeHit_MonoSword</meleeHitSound>
+    <equippedAngleOffset>-25</equippedAngleOffset>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Spear</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+     <tools>
+      <li>
+        <label>blade</label>
+        <capacities>
+	<li>Cut</li>
+        </capacities>
+        <power>58</power>
+        <armorPenetration>0.60</armorPenetration>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>44</power>
+        <armorPenetration>1.50</armorPenetration>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>side points</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>18</power>
+        <armorPenetration>1.10</armorPenetration>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+	<!-- Ravenous splitter -->
+
+<ThingDef ParentName="MeleeWeaponUltratech">
+    <defName>MeleeWeapon_RavenousSplitter</defName>
+    <label>ravenous splitter</label>
+    <description>A dual blade spear, more made to cut than poke, with a little blaster between the blades.</description>
+    <soundInteract>Interact_MonoSword</soundInteract>
+    <meleeHitSound>MeleeHit_MonoSword</meleeHitSound>
+    <equippedAngleOffset>-25</equippedAngleOffset>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Spear</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>6.0</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>2.00</RangedWeapon_Cooldown>
+    </statBases>
+    <tools>
+      <li>
+        <label>left blade</label>
+        <capacities>
+		<li>Cut</li>
+        </capacities>
+        <power>44</power>
+        <cooldownTime>1.00</cooldownTime>
+      </li>
+      <li>
+        <label>right blade</label>
+        <capacities>
+		<li>Cut</li>
+        </capacities>
+        <power>44</power>
+        <cooldownTime>1.00</cooldownTime>
+      </li>
+      <li>
+        <label> double edged point </label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>32</power>
+        <armorPenetration>0.80</armorPenetration>
+        <cooldownTime>1.2</cooldownTime>
+      </li>
+    </tools>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_RavenousSplitter</defaultProjectile>
+        <warmupTime>0.7</warmupTime>
+        <range>15.9</range>
+        <soundCast>ChargeLance_Fire</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+	<!-- Associated Bullet (ravenous splitter) -->   
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_RavenousSplitter</defName>
+    <label>ravenous splitter shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/ChargeLanceShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>2.0</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>35</damageAmountBase>
+      <stoppingPower>2.0</stoppingPower>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+
+
+
+</Defs>

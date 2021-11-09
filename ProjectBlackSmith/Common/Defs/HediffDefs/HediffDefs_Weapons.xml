@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--  Stase  -->
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>StaseTraped</defName>
+    <label>trap in stase</label>
+    <labelNoun>a stase trap</labelNoun>
+    <description>A temporal stase has been set on this creature, making the creature collapse. The victim's metabolism is freezed, however nothing impeach her to be attacked.</description>
+    <defaultLabelColor>( 1, 0.2, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>8500~8500</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <totalBleedFactor>0.00</totalBleedFactor>
+        <restFallFactorOffset>-1.0</restFallFactorOffset>
+        <painFactor>0</painFactor>
+        <hungerRateFactorOffset>-1.0</hungerRateFactorOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.01</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+	<!--  Neurotoxin buildup -->
+
+   <HediffDef>
+    <defName>NeurotoxinBuildup</defName>
+    <label>Neurotoxin buildup</label>
+    <description>Neurotoxin in the bloodstream.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.5, 1.0, 0.5)</defaultLabelColor>
+    <lethalSeverity>1</lethalSeverity>
+    <makesSickThought>true</makesSickThought>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <taleOnVisible>ToxicityRevealed</taleOnVisible>
+    <comps>
+      <li Class="HediffCompProperties_Immunizable">
+        <severityPerDayNotImmune>-0.02</severityPerDayNotImmune>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>initial</label>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.5</offset>
+	  </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.5</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>minor</label>
+        <minSeverity>0.2</minSeverity>
+        <vomitMtbDays>5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+	  </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>0.40</minSeverity>
+        <vomitMtbDays>0.3</vomitMtbDays>
+        <painFactor>0.6</painFactor>
+        <socialFightChanceFactor>2</socialFightChanceFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>Dementia</hediff>
+            <mtbDays>1.2</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <label>serious</label>
+        <minSeverity>0.60</minSeverity>
+        <vomitMtbDays>0.1</vomitMtbDays>
+        <painFactor>0.4</painFactor>
+        <socialFightChanceFactor>2.7</socialFightChanceFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>Dementia</hediff>
+            <mtbDays>0.5</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+	 <mentalStateGivers>
+	   <li>
+            <mentalState>Berserk</mentalState>
+            <mtbDays>0.1</mtbDays>
+           </li>
+	 </mentalStateGivers>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>0.80</minSeverity>
+        <vomitMtbDays>0.05</vomitMtbDays>
+        <painFactor>0</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.60</setMax>
+          </li>
+        </capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>Dementia</hediff>
+            <mtbDays>0.02</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+	<mentalStateGivers>
+	  <li>
+            <mentalState>Berserk</mentalState>
+            <mtbDays>0.01</mtbDays>
+          </li>
+	</mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!--          <li Class="HediffCompProperties_KillAfterDays">  -->
+<!--        <days>1</days>   -->
+<!--          </li>    -->
+
+
+</Defs>

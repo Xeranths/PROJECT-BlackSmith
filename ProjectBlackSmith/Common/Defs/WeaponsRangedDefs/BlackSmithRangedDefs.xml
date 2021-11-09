@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- LRAR Vanguard -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>BlackSmith_LRAR-Vanguard</defName>
+    <label>LRAR-Vanguard</label>
+    <description>A charged-shot assault rifle. Pulse-charge technology charges each shot with unstable energy as it leaves the barrel. Released on impact, the charged energy greatly increases the damage done.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>65000</WorkToMake>
+      <Mass>3.8</Mass>
+      <AccuracyTouch>0.40</AccuracyTouch>
+      <AccuracyShort>0.54</AccuracyShort>
+      <AccuracyMedium>0.72</AccuracyMedium>
+      <AccuracyLong>0.84</AccuracyLong>
+      <RangedWeapon_Cooldown>2.00</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NeurotoxinBullet</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>39.9</range>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>4</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_NeurotoxinBullet</defName>
+    <label>neurotoxin shard</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>PBlackSmith.Projectile_HediffBullet</thingClass>
+      <modExtensions>
+        <li Class="PBlackSmith.ModExtension_HediffBullet">
+          <addHediffChance>1.0</addHediffChance>
+          <hediffToAdd>NeurotoxinBuildup</hediffToAdd>
+          <minSeverity>0.10</minSeverity>
+          <maxSeverity>0.35</maxSeverity>
+        </li>
+      </modExtensions>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>3</damageAmountBase>
+      <armorPenetrationBase>0.85</armorPenetrationBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>95</speed>
+    </projectile>
+  </ThingDef>
+
+	<!--  Stase Gun -->
+
+<ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>BlackSmith_StaseGun</defName>
+    <label>Stase Gun</label>
+    <description>An ancient pattern blowback-operated self-loading pistol. It lacks stopping power and range, but is quick to fire.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Autopistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.5</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>16</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <weaponTags>
+      <li>SimpleGun</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.2</Mass>
+      <AccuracyTouch>1.00</AccuracyTouch>
+      <AccuracyShort>1.00</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.10</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+      <Plasteel>30</Plasteel>
+      <Gold>45</Gold>
+      <Silver>15</Silver>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_StaseBullet</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_StaseBullet</defName>
+    <label>stase bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>PBlackSmith.Projectile_HediffBullet</thingClass>
+      <modExtensions>
+        <li Class="PBlackSmith.ModExtension_HediffBullet">
+          <addHediffChance>1.0</addHediffChance>
+          <hediffToAdd>StaseTraped</hediffToAdd>
+        </li>
+      </modExtensions>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>1.0</damageAmountBase>
+      <armorPenetrationBase>0.9</armorPenetrationBase>
+      <stoppingPower>0.1</stoppingPower>
+      <speed>110</speed>
+    </projectile>
+  </ThingDef>
+
+
+
+
+</Defs>

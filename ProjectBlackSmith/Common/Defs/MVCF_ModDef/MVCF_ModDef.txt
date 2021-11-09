@@ -1,0 +1,10 @@
+<MVCF.ModDef>
+	<defName>MM_MagicalMenagerie</defName>
+	<label>Magical Menagerie</label>
+	<description>Adding animal ranged attacks for Magical Menagerie creatures</description>
+	<Features>
+		<RangedAnimals>true</RangedAnimals>
+		<HediffVerbs>true</HediffVerbs>
+		<IntegratedToggle>true</IntegratedToggle>
+	</Features>
+</MVCF.ModDef>
